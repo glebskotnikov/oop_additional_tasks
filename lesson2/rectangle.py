@@ -11,7 +11,27 @@
 
 
 class Rectangle:
-    pass
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        square = self.width * self.height
+        return square
+
+    def perimeter(self):
+        perimeter = 2 * (self.width + self.height)
+        return perimeter
+
+    @classmethod
+    def from_diagonal(cls, diagonal, aspect_ratio):
+        return cls(diagonal, aspect_ratio)
+
+    @staticmethod
+    def is_square(width, height):
+        if width == height:
+            return True
+        return False
 
 
 rectangle = Rectangle(4, 5)
